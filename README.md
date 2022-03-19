@@ -1,4 +1,4 @@
-# MoviesApp
+# React Native Login Sample
 
 Movies App is an application that shows the most popular movies and performs a search based on the search term, it uses [The Movie Database API](https://developers.themoviedb.org/4/getting-started/authorization)
 

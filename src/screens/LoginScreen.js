@@ -59,7 +59,14 @@ const LoginScreen = ({ navigation }) => {
           style={styles.loginButton}>
           <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
+
+        <Text style={{ color: 'blue', fontSize: 20, textAlign: 'center' }}
+          onPress={() => navigation.navigate('Register')}>
+          Register
+        </Text>
+
       </View>
+
     </View>
   );
 };
@@ -83,7 +90,7 @@ function validationSchema() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    paddingVertical: 40,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#f2f2f2',
