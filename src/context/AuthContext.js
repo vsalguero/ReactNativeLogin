@@ -22,11 +22,31 @@ export const AuthProvider = ({ children }) => {
         let userInfo = res.data;
         console.log(userInfo);
         setUserInfo(userInfo);
+        //this store login data
         AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
         setIsLoading(false);
       })
       .catch(e => {
         console.log(`login error ${e}`);
+        setIsLoading(false);
+      });
+  };
+
+  const register = (email, password) => {
+
+    axios
+      .post(`${BASE_URL}/register`, {
+        email,
+        password,
+      })
+      .then(res => {
+        let userInfo = res.data;
+        console.log(userInfo);
+        setUserInfo(userInfo);
+        setIsLoading(false);
+      })
+      .catch(e => {
+        console.log(`register error ${e}`);
         setIsLoading(false);
       });
   };
@@ -86,6 +106,7 @@ export const AuthProvider = ({ children }) => {
         splashLoading,
         login,
         logout,
+        register,
       }}>
       {children}
     </AuthContext.Provider>

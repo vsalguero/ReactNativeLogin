@@ -8,7 +8,9 @@ import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import { AuthContext } from '../context/AuthContext';
 import SplashScreen from '../screens/SplashScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 import SearchScreen from '../screens/SearchScreen';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -46,6 +48,17 @@ const Navigation = () => {
             options={{ headerShown: false }}
           />
         )}
+        <Stack.Screen
+          name="Register"
+          component={RegisterScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: '#032541',
+            },
+            headerTintColor: '#fff',
+            title: 'Register',
+          }}
+        />
         <Stack.Screen
           name="Search"
           component={SearchScreen}
