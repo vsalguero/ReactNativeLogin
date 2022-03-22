@@ -38,6 +38,9 @@ const RegisterScreen = ({ navigation }) => {
       <ActivityIndicator size="large" color="blue" animating={isLoading} />
       <View style={styles.wrapper}>
         <Text style={styles.textError}>{formik.errors.email}</Text>
+        <Text style={{ textAlign: 'center', fontSize: 16 }}>
+          "email": "eve.holt@reqres.in"
+        </Text>
         <TextInput
           mode="outlined"
           label="Enter Email"
@@ -54,7 +57,7 @@ const RegisterScreen = ({ navigation }) => {
           onChangeText={text => formik.setFieldValue('password', text)}
           secureTextEntry
         />
-
+        <Text style={styles.textError}>{formik.errors.confirmPassword}</Text>
         <TextInput
           style={styles.input}
           mode="outlined"
@@ -70,6 +73,12 @@ const RegisterScreen = ({ navigation }) => {
           style={styles.registerButton}>
           <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
+
+        <Text>{'\n'}</Text>
+        <Text style={{ color: 'blue', fontSize: 20, textAlign: 'center' }}
+          onPress={() => navigation.navigate('Login')}>
+          Login
+        </Text>
       </View>
     </View>
   );
@@ -92,7 +101,7 @@ function validationSchema() {
     password: yup
       .string()
       .required('Please enter your password.')
-      .min(8, 'Your password is too short.'),
+      .min(6, 'Your password is too short, min 6 characters.'),
     confirmPassword: yup
       .string()
       .required('Please retype your password.')

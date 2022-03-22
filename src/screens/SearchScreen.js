@@ -12,8 +12,9 @@ const SearchScreen = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text>
-          Second page
+        <Text style={{ fontSize: 20, marginBottom: 10 }}>
+          Search Screen
+
         </Text>
 
       </View>
@@ -24,6 +25,8 @@ const SearchScreen = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingVertical: 40,
+    alignItems: 'center',
     backgroundColor: '#f2f2f2',
   },
 });

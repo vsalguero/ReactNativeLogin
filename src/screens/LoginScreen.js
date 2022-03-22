@@ -60,6 +60,11 @@ const LoginScreen = ({ navigation }) => {
           <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
 
+        <Text style={{ textAlign: 'center', fontSize: 16 }}>
+          "email": "eve.holt@reqres.in" {'\n'}
+          "password": "cityslicka"
+        </Text>
+        <Text>{'\n'}</Text>
         <Text style={{ color: 'blue', fontSize: 20, textAlign: 'center' }}
           onPress={() => navigation.navigate('Register')}>
           Register
